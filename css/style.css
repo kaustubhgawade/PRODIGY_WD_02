@@ -1,0 +1,371 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+:root {
+  --background-color: #17191e;
+  --background-color-2: #1e2129;
+  --green-color: #0f9c59;
+  /* --blue-color: #4d55d2; */
+  --blue-color: #5961d1;
+  --red-color: #ff3030;
+  --white-color: #fff;
+  --black-color: #000;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  color: var(--white-color);
+}
+/* --------------------------SCROLLBAR--------------------------*/
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--background-color-2);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--white-color);
+}
+
+/* --------------------------BODY-------------------------- */
+body {
+  background-color: var(--background-color);
+  opacity: 0;
+  transition: opacity 1s ease; /* You can adjust the duration and easing */
+}
+.container {
+  height: 100vh;
+}
+
+/* --------------------------NAVBAR-------------------------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 20px 40px;
+}
+.navbar button {
+  border: 0;
+  background-color: transparent;
+  font-size: 1.2em;
+  background-color: var(--background-color-2);
+}
+.settings button {
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+}
+.settings button i {
+  font-size: 20px;
+  color: var(--white-color);
+  padding: 10px;
+}
+.logo a button {
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 900;
+}
+.logo #logo-letter {
+  color: var(--blue-color);
+}
+.nav-links-wrapper ul {
+  display: flex;
+  background-color: var(--background-color-2);
+  border-radius: 25px;
+  padding: 10px 0;
+}
+.nav-links-wrapper li {
+  list-style-type: none;
+  font-size: 1.2em;
+  padding: 0 20px;
+  border-right: 2px solid var(--background-color);
+  display: flex;
+  align-items: center;
+}
+.active-link > * {
+  color: var(--blue-color);
+  font-weight: 800;
+}
+.nav-links-wrapper ul li:last-child {
+  border-right: 0;
+}
+.nav-links-wrapper a {
+  text-decoration: none;
+  padding: 0 7px;
+}
+@media screen and (max-width: 460px) {
+  .navbar {
+    padding: 10px;
+  }
+  .navbar button {
+    font-size: 1em;
+  }
+  .nav-links-wrapper li {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 375px) {
+  .navbar {
+    padding-top: 10px;
+    height: 60px;
+  }
+  .logo {
+    display: none;
+  }
+}
+
+/* --------------------------------------MAIN-------------------------------------- */
+.main-section {
+  padding: 100px 120px;
+}
+
+/* --------------------------------------side navbar wrapper-------------------------------------- */
+.side-navbar-wrapper {
+  /* display: none;  */
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  background-color: #0c0e21;
+  width: 0;
+  transition: width 0.1s ease;
+  overflow: hidden; 
+  opacity: 0;
+}
+.appear {
+  opacity: 1;
+  width: 300px;
+  padding: 25px 15px;
+  
+}
+.side-navbar-wrapper .settings-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.side-navbar-wrapper i {
+  padding: 10px 15px;
+}
+.side-navbar-wrapper h4 {
+  padding: 10px 0;
+}
+.side-navbar-wrapper .shortcuts {
+  padding: 10px 0;
+}
+.side-navbar-wrapper h5 {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+.side-navbar-wrapper p {
+  font-size: 14px;
+  line-height: 25px;
+  margin-bottom: 10px;
+}
+.side-navbar-wrapper .shortcuts-values {
+  font-size: 16px;
+  background-color: grey;
+  background-color: rgb(75, 85, 99);
+  padding: 1px 4px;
+  border-bottom: 1px solid white;
+  border-radius: 3px;
+}
+
+/* --------------------------------------stopwatch-------------------------------------- */
+.stopwatch-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.stopwatch-wrapper #control-btns button {
+  height: 60px;
+  width: 60px;
+  font-size: 1.5em;
+  border: 0;
+  border-radius: 100%;
+  margin: 0 10px;
+  transition: background-color 0.3s ease-in;
+}
+.stopwatch-wrapper #start-btn {
+  background-color: var(--green-color);
+}
+.stopwatch-wrapper #start-btn:hover {
+  background-color: #0a6b3f;
+}
+.stopwatch-wrapper #pause-btn {
+  background-color: var(--blue-color);
+  display: none;
+}
+.stopwatch-wrapper #pause-btn:hover {
+  background-color: #393e93;
+}
+.stopwatch-wrapper #lap-btn {
+  background-color: var(--black-color);
+}
+.stopwatch-wrapper #lap-btn:hover {
+  background-color: #1f1f1f;
+}
+.stopwatch-wrapper #display-time {
+  font-size: 3.5em;
+  display: flex;
+}
+.stopwatch-wrapper .units {
+  width: 70px;
+  text-align: center;
+}
+.stopwatch-wrapper #reset-btn {
+  background-color: transparent;
+  border: 0;
+  font-size: 1.5em;
+  transition: all 0.2s ease;
+  padding: 0 10px;
+}
+.stopwatch-wrapper #reset-btn:hover {
+  color: var(--red-color);
+}
+@media screen and (max-width: 1024px) {
+  .main-section {
+    padding: 50px 40px;
+  }
+}
+@media screen and (max-width: 820px) {
+  .stopwatch-wrapper #control-btns button {
+    height: 40px;
+    width: 40px;
+    font-size: 1em;
+    margin: 0 5px;
+  }
+  .stopwatch-wrapper #control-btns button {
+    font-size: 1em;
+  }
+  .stopwatch-wrapper #display-time {
+    font-size: 2.5em;
+  }
+  .stopwatch-wrapper #reset-btn {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 650px) {
+  .main-section {
+    padding: 25px;
+  }
+  .stopwatch-wrapper {
+    margin: 60px 0;
+    height: 150px;
+    flex-direction: column;
+  }
+  .stopwatch-wrapper #control-btns {
+    margin-left: auto;
+  }
+  .stopwatch-wrapper div:last-child {
+    margin-left: auto;
+  }
+  .stopwatch-wrapper div#control-btns:nth-child(1) {
+    order: 2;
+  }
+  .stopwatch-wrapper div#control-btns:nth-child(2) {
+    order: 1;
+  }
+  .stopwatch-wrapper div#control-btns:nth-child(3) {
+    order: 3;
+  }
+}
+@media screen and (max-width: 425px) {
+  .main-section {
+    padding: 10px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .stopwatch-wrapper #display-time {
+    font-size: 2em;
+  }
+  .stopwatch-wrapper .units {
+    width: 50px;
+  }
+}
+
+/* --------------------------------------lap record-------------------------------------- */
+
+.lap-records-wrapper {
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
+}
+.lap-records {
+  visibility: hidden;
+  max-height: 340px;
+  overflow-y: auto;
+}
+.lap-records::-webkit-scrollbar {
+  width: 6px;
+}
+.lap-records::-webkit-scrollbar-track {
+  background-color: var(--background-color);
+}
+.lap-records::-webkit-scrollbar-thumb:hover {
+  background-color: #808080;
+}
+.lap-records table {
+  width: 600px;
+  border-collapse: collapse;
+}
+.lap-records thead {
+  position: sticky;
+  top: 0;
+  background-color: var(--background-color);
+}
+.lap-records th {
+  background-color: #1e2837;
+  padding: 7px;
+}
+.lap-records th:first-child {
+  width: 20%;
+}
+.lap-records th:last-child {
+  width: 90%;
+}
+.lap-records tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+.lap-records tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
+.lap-records td {
+  text-align: center;
+  padding: 10px;
+}
+.bgcolor1 {
+  background-color: #1e2837;
+}
+.bgcolor2 {
+  background-color: #374050;
+}
+.lap-records tbody tr:nth-child(2n) {
+  background-color: #1e2837;
+}
+.lap-records tbody tr:nth-child(2n + 1) {
+  background-color: #374050;
+}
+.lap-records tbody tr:nth-child(1) {
+  background-color: var(--blue-color);
+}
+@media screen and (max-width: 680px) {
+  .lap-records-wrapper {
+    padding: 20px 0;
+  }
+  .lap-records-wrapper .lap-records {
+    width: 100%;
+  }
+  .lap-records-wrapper table {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 300px) {
+  .lap-records td {
+    padding: 10px 0;
+  }
+}

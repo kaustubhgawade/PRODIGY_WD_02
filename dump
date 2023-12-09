@@ -1,0 +1,30 @@
+//   document.getElementById("hours").textContent =
+//     hours > 9 ? hours + " : " : "0" + hours + " : ";
+//   document.getElementById("minutes").textContent =
+//     minutes > 9 ? minutes + " : " : "0" + minutes + " : ";
+//   document.getElementById("seconds").textContent =
+//     seconds > 9 ? seconds + " : " : "0" + seconds + " : ";
+//   document.getElementById("milliseconds").textContent =
+//     milliseconds > 9 ? milliseconds + " : " : "0" + milliseconds + " : ";
+
+
+<!-- <tr>
+<td>5</td>
+<td>00:20:30:00</td>
+</tr>
+<tr>
+<td>4</td>
+<td>00:20:30:00</td>
+</tr>
+<tr>
+<td>3</td>
+<td>00:20:30:00</td>
+</tr>
+<tr>
+<td>2</td>
+<td>00:20:30:00</td>
+</tr>
+<tr>
+<td>1</td>
+<td>00:20:30:00</td>
+</tr> -->

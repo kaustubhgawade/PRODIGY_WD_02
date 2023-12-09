@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Experience accurate time tracking with our intuitive stopwatch web app. Effortlessly measure time, set laps, and manage tasks efficiently. Enjoy a user-friendly interface for precise timing and enhanced productivity.">
+    <meta name="theme-color" content="#4d55d2" />
+    <title>Stopwatch | planck</title>
+    <!-- Font awesome -->
+    <!-- <link rel="stylesheet" href="css/fontawesome.min.css"> -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Favicion -->
+    <link rel="shortcut icon" href="./imgs/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Navbar -->
+        <section class="navbar">
+            <div class="logo">
+                <a href="http://127.0.0.1:5500/">
+                    <button>
+                        &colon;planck
+                    </button>
+                </a>
+            </div>
+            <div class="nav-links-wrapper">
+                <ul>
+                    <li class="active-link">
+                        <i class="fa-solid fa-stopwatch"></i>
+                        <a href="index.html">Stopwatch</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="settings">
+                <button id="fullscreen" aria-label="fullscreen">
+                    <i class="fa-solid fa-expand"></i>
+                </button>
+                <button id="open-settings" aria-label="settings">
+                    <i class="fa-solid fa-gear"></i>
+                </button>
+            </div>
+        </section>
+        <!-- Main section -->
+        <section class="main-section">
+            <div class="sidebar-container">
+                <div class="side-navbar-wrapper">
+                    <div class="settings-head">
+                        <h4>Settings</h4>
+                        <i class="fa-solid fa-close" id="close-settings"></i>
+                    </div>
+                    <div class="shortcuts">
+                        <h5>Keyboard Shortcuts</h5>
+                        <div class="shortcuts-inner-div">
+                            <p>
+                                Play/Pause: &nbsp;&nbsp;<span class="shortcuts-values">Spacebar</span>
+                            </p>
+                            <p>
+                                Reset: &nbsp;&nbsp;<span class="shortcuts-values">Ctrl + r</span>
+                            </p>
+                            <p>
+                                Fullscreen: &nbsp;&nbsp;<span class="shortcuts-values">Ctrl + f</span>
+                            </p>
+                            <p>
+                                Laps: &nbsp;&nbsp;<span class="shortcuts-values">Ctrl + v</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stopwatch-wrapper">
+                <!-- Play/Pause btn -->
+                <div id="control-btns">
+                    <button id="start-btn" class="play" aria-label="start timer">
+                        &nbsp;<i class="fa-solid fa-play"></i>
+                    </button>
+                    <button id="pause-btn" class="pause" aria-label="stop timer">
+                        <i class="fa-solid fa-pause"></i>
+                    </button>
+                    <button id="lap-btn" aria-label="make lapse">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+                <!-- Time -->
+                <div id="display-time">
+                    <div class="units" id="hours">00</div><span>&nbsp;:&nbsp;</span>
+                    <div class="units" id="minutes">00</div><span>&nbsp;:&nbsp;</span>
+                    <div class="units" id="seconds">00</div><span id="last-colon">&nbsp;:&nbsp;</span>
+                    <div class="units" id="milliseconds">00</div>
+                    <!-- <span id="msecs">: 00</span> -->
+                </div>
+
+                <!-- Reset btn -->
+                <div>
+                    <button id="reset-btn" aria-label="reset">Reset</button>
+                </div>
+            </div>
+            <!-- Lap records -->
+            <div class="lap-records-wrapper">
+                <div class="lap-records">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Lap</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
