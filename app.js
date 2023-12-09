@@ -1,8 +1,10 @@
+// on webpage load effect
 window.addEventListener("DOMContentLoaded", (event) => {
   const content = document.querySelector("body");
   content.style.opacity = "1";
 });
 
+// main clock
 let timer;
 let flag = false;
 
